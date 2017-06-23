@@ -4,9 +4,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="t1000" class="robot.ModelT1000">
-        <constructor-arg ref="sonyHand"/>
-        <constructor-arg ref="sonyLeg"/>
-        <constructor-arg ref="sonyHead"/>
+        <!--<constructor-arg ref="sonyHand"/>-->
+        <!--<constructor-arg ref="sonyLeg"/>-->
+        <!--<constructor-arg ref="sonyHead"/>-->
+
+        <property name="hand" ref="toshHand"/>
+        <property name="head" ref="toshHead"/>
+        <property name="leg" ref="toshLeg"/>
+
     </bean>
 
     <bean id="sonyHand" class="sony.SonyHand"/>

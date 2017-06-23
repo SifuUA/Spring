@@ -7,6 +7,10 @@
         <constructor-arg ref="sonyHand"/>
         <constructor-arg ref="sonyLeg"/>
         <constructor-arg ref="sonyHead"/>
+
+        <property name="hand" ref="toshHand"/>
+        <property name="head" ref="toshHead"/>
+
     </bean>
 
     <bean id="sonyHand" class="sony.SonyHand"/>
