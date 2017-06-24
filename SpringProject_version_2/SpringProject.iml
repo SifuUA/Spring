@@ -5,6 +5,10 @@
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/toshiba_context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/db_context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/sony_context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/all_context.xml</file>
         </fileset>
       </configuration>
     </facet>
