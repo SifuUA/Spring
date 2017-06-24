@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--бин для консруктора c примитивами и обьектами-->
     <bean id="t1000" class="robot.ModelT1000"
         p:hand-ref="toshHand"
         p:leg-ref="sonyLeg"
@@ -25,6 +27,13 @@
 
     <!--бин для пустого консруктора-->
     <bean id="t1000Empty" class="robot.ModelT1000">
+        <constructor-arg ref="sonyHand"/>
+        <constructor-arg ref="sonyLeg"/>
+        <constructor-arg ref="toshHead"/>
+    </bean>
+
+    <bean id="t1000Third" class="robot.ModelT1000"
+        c:color="red" c:year="3000" c:soundEnabled="true">
         <constructor-arg ref="sonyHand"/>
         <constructor-arg ref="sonyLeg"/>
         <constructor-arg ref="toshHead"/>
