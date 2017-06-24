@@ -3,13 +3,23 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+
+       default-init-method="initObject"
+       default-destroy-method="destroyObj"
+       default-lazy-init="true"
+>
+
+
 
     <!--бин для консруктора c примитивами и обьектами-->
     <bean id="t1000" class="robot.ModelT1000"
         p:hand-ref="toshHand"
         p:leg-ref="sonyLeg"
-        p:head-ref="toshHead">
+        p:head-ref="sonyHead">
+        <!--init-method="initObject"-->
+        <!--destroy-method="destroyObj"-->
+    <!--&gt;-->
 
         <!--<constructor-arg ref="sonyHand"/>-->
         <!--<constructor-arg ref="sonyLeg"/>-->
@@ -32,15 +42,16 @@
         <constructor-arg ref="toshHead"/>
     </bean>
 
-    <bean id="t1000Third" class="robot.ModelT1000"
-        c:color="red" c:year="3000" c:soundEnabled="true">
-        <constructor-arg ref="sonyHand"/>
-        <constructor-arg ref="sonyLeg"/>
-        <constructor-arg ref="toshHead"/>
-    </bean>
+    <!--<bean id="t1000Third" class="robot.ModelT1000"-->
+        <!--c:color="red" c:year="3000" c:soundEnabled="true"-->
+        <!--lazy-init="true">-->
+        <!--<constructor-arg ref="sonyHand"/>-->
+        <!--<constructor-arg ref="sonyLeg"/>-->
+        <!--<constructor-arg ref="toshHead"/>-->
+    <!--</bean>-->
 
     <bean id="sonyHand" class="sony.SonyHand"/>
-    <bean id="sonyHead" class="sony.SonyHead"/>
+    <bean id="sonyHead" class="sony.SonyHead" scope="prototype"/>
     <bean id="sonyLeg" class="sony.SonyLeg"/>
 
     <bean id="toshHand" class="toshiba.ToshHand"/>
