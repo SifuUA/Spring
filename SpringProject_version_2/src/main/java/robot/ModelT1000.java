@@ -4,11 +4,13 @@ import interfaces.Hand;
 import interfaces.Head;
 import interfaces.Leg;
 import interfaces.Robot;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * Created by Alex on 23.06.2017.
  */
-public class ModelT1000 implements Robot{
+public class ModelT1000 implements Robot, InitializingBean, DisposableBean{
 
     private Hand hand;
     private Leg leg;
@@ -112,5 +114,15 @@ public class ModelT1000 implements Robot{
 
     public void destroyObj(){
         System.out.println("DestroyObj");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println(this + " - method destroy()");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println(this + " - method int()");
     }
 }
