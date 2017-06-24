@@ -5,10 +5,7 @@
        xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 
-       default-init-method="initObject"
-       default-destroy-method="destroyObj"
-       default-lazy-init="true"
->
+       default-lazy-init="true">
 
 
 
@@ -57,6 +54,7 @@
     <bean id="toshHand" class="toshiba.ToshHand"/>
     <bean id="toshHead" class="toshiba.ToshHead"/>
     <bean id="toshLeg" class="toshiba.ToshLeg"/>
+    <bean class="start.MyBeanPostprocessor"/>
 
 
 
