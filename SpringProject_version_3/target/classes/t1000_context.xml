@@ -13,6 +13,8 @@
     <constructor-arg value="silver" index="3" type="java.lang.String"/>
     <constructor-arg value="2005" index="4" type="int"/>
     <constructor-arg value="true" index="5" type="boolean"/>
+
+        <replaced-method name="action" replacer="actionReaplacer"></replaced-method>
 </bean>
 
 <bean id="baseModel" abstract="true">
@@ -20,4 +22,5 @@
     <constructor-arg ref="sonyLeg" index="1"/>
     <constructor-arg ref="toshHead" index="2"/>
 </bean>
+    <bean id="actionReaplacer" class="robot.ActionReplacer"/>
 </beans>
