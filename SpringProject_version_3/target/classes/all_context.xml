@@ -5,5 +5,9 @@
 
     <import resource="t1000_context.xml"/>
 
+    <bean class="start.MyBeanPostprocessor"/>
+    <bean id="t1000Conveer" class="conveer.T100Conveer">
+        <lookup-method name="createRobot" bean="t1000"/>
+    </bean>
 
 </beans>
